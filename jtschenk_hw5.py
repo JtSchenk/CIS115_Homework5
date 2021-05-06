@@ -24,8 +24,14 @@ def input_student():
     return name_list, id_list
 
 
-def input_assignments():
-    pass
+def input_assignments(student_dic, num_assignments):
+    total_scores = []
+
+    for i in range(num):
+        score_assignment = int(input("Enter score for assignment: "))
+        total_scores.append(score_assignment)
+        student_dic['Scores'] = total_scores
+
 def grade_student():
     pass
 
