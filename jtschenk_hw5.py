@@ -27,19 +27,18 @@ def input_student():
 def input_assignments(student_dic, num_assignments):
     total_scores = []
 
-    for i in range(num):
+    for i in range(num_assignments):
         score_assignment = int(input("Enter score for assignment: "))
         total_scores.append(score_assignment)
         student_dic['Scores'] = total_scores
 
-def grade_student():
-    pass
+def grade_student(student_dic):
+    average_student = sum(student_dic['Scores'])/#find a way to divide by number.... maybe using len?)
+    student_dic['Average Grade'] = average_student
 
-def print_report():
-    pass
+def print_report(student_dic):
 
 def main():
     pass
 
-input_student()
-input_assignments()
+main()
