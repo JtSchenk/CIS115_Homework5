@@ -2,11 +2,10 @@ def input_student():
     name_list = []
     id_list = []
     is_new_student = True
-    while(is_new_student == True):
-        student_name = input("What is your name?: ")
-        name_list.append(student_name)
-        student_id = input("\nWhat is your id number?: ")
-        id_list.append(student_id)
+    student_name = input("What is your name?: ")
+    name_list.append(student_name)
+    student_id = input("\nWhat is your id number?: ")
+    id_list.append(student_id)
     return name_list, id_list
 
 
@@ -24,30 +23,22 @@ def grade_student(student_dic):
 
 def print_report(student_dic):
     for id, student in student_dic.items():
-        print("Name: {}, Scores: {}, Average Grade: {}".format(student['Name'], student['Scores'], student['AverageGrade']))
+        print("Name: {}, Scores: {}, Average Grade: {}".format(student["Student Name"], student["Scores"], student['Average Score']))
 
 def main():
     
     student_dic = {}
 
-    enter_student = input("Enter another student? (y)es or (n)o: ")
-        if(enter_student == "Y" or enter_student == "y"):
-            pass
-        elif(enter_student == "N" or enter_student == "n"):
-            break
-        else:
-            while(enter_student != "Y" or enter_student != "y" or enter_student != "N" or enter_student != "n"):
-                print("\nEnter a valid response.\n")
-                enter_student = input("Enter another student? (y)es or (n)o: ")
-                if(enter_student == "Y" or enter_student == "y"):
-                    break
-                elif(enter_student == "n" or enter_student == "N"):
-                    is_new_student = False
-                    break
+#may be problem with different names and input methods.
+    enter_student = 'Y'
 
-    student_name, student_id = input_student()
+    while(enter_student != 'N' or enter_student != 'n'):
 
-    student_dic[student_id] = {'Student Name' : student_name}
+        student_name, student_id = input_student()
+
+        student_dic[student_id] = {"Student Name": student_name, "Average Score":0}
+
+        enter_student = input("Do you want to enter another student?: ")[0]
 
     number_assignments = int(input("Enter number of assignments: "))
 
